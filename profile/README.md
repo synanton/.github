@@ -98,14 +98,6 @@ Lucentrix is responsible for connecting sources; Synanton remains responsible fo
 
 Synanton components are currently in the initial drafting and validation phase based on the design documentation. Individual repositories document their current implementation status, architecture and roadmap.
 
-
-## Status
-
-![Status](https://shields.io)
-
-Synanton components are currently in the initial drafting and validation phase based on the design documentation. Individual repositories document their current implementation status, architecture and roadmap.
-
-
 ## License
 
 Individual repositories specify their applicable license.
