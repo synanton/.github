@@ -9,16 +9,16 @@ Synanton explores how enterprise knowledge and business operations can be made *
 ```text
                          SYNANTON
                             │
-             ┌──────────────┴────────────────┐
-             │                               │
-       Knowledge Platform         Business Logic Library
-             │                               │
-  ┌──────────┼────────────┐      ┌───────────┼────────────────┐
-  │      ingestion        │      │                            │
-  │        search         │      │ Resolutor Equalix Commitix │
-  │    relationships      │      │    │        │       │      │
-  │       ontology        │      │  Plan  Schedule   Ensure   │
-  └───────────────────────┘      └────────────────────────────┘
+             ┌──────────────┴──────────────────────┐
+             │                                     │
+       Knowledge Platform              Business Logic Library
+             │                                     │
+  ┌──────────┼────────────┐      ┌─────────────────┼────────────────┐
+  │      ingestion        │      │                                  │
+  │        search         │      │  Resolutor   Equalix   Commitix  │
+  │    relationships      │      │      │          │          │     │
+  │       ontology        │      │     Plan     Schedule   Ensure   │
+  └───────────────────────┘      └──────────────────────────────────┘
              ▲
              │
       ┌───────────────┐
@@ -32,7 +32,7 @@ Synanton explores how enterprise knowledge and business operations can be made *
 
 [**Synanton Platform**](https://github.com/synanton/platform) is an open-source enterprise knowledge platform for applications that need to work with complex, distributed organizational knowledge.
 
-The platform is built around explicit architectural boundaries and replaceable implementations, allowing infrastructure choices to evolve independently from business functionality.
+The platform is built around explicit architectural boundaries and replaceable implementations, allowing implementation choices to evolve independently from business functionality.
 
 ## Business Logic Library
 
@@ -93,17 +93,6 @@ Enterprise Knowledge
 ```
 
 Lucentrix is responsible for connecting sources; Synanton remains responsible for knowledge processing and indexing.
-
-## Explore
-
-**Knowledge Platform**
-[Synanton Platform](https://github.com/synanton/platform) — enterprise knowledge infrastructure
-
-**Business Logic**
-[Resolutor](https://github.com/synanton/resolutor) · [Equalix](https://github.com/synanton/equalix) · [Commitix](https://github.com/synanton/commitix)
-
-**Ingestion**
-[Lucentrix](https://github.com/synanton/lucentrix) — pluggable content connectors
 
 ## Status
 
