@@ -36,7 +36,7 @@ The platform is built around explicit architectural boundaries and replaceable i
 
 ## Business Logic Library
 
-The **Synanton Business Logic Library** provides reusable building blocks for **dependency-aware planning, resource-aware scheduling, and durable execution**.
+The **Synanton Business Logic Library** provides reusable building blocks for **dependency-aware planning, resource-aware scheduling and durable execution**.
 
 | Project                                                | Question                                                                                |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------- |
