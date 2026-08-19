@@ -38,11 +38,11 @@ The platform is built around explicit architectural boundaries and replaceable i
 
 The **Synanton Business Logic Library** provides reusable building blocks for **dependency-aware planning, resource-aware scheduling and durable execution**.
 
-| Project                                                | Question                                                                                |
-| ------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?** - dependency analysis, conflict resolution, and execution planning |
-| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?** - fair, resource-aware scheduling                            |
-| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** - durable execution intent and recovery                |
+| Project                                                | Question                                                                                |   Status         |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------- |------------------|
+| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?** - dependency analysis, conflict resolution, and execution planning | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
+| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?** - fair, resource-aware scheduling                            | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
+| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** - durable execution intent and recovery                | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
 
 Together:
 
@@ -94,7 +94,7 @@ Enterprise Knowledge
 
 Lucentrix is responsible for connecting sources; Synanton remains responsible for knowledge processing and indexing.
 
-## Status
+## Status  ![Status](https://img.shields.io/badge/Status-Experimental-purple)
 
 Synanton is under active development. Individual repositories document their current implementation status, architecture, and roadmap.
 
