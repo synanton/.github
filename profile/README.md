@@ -40,9 +40,9 @@ The **Synanton Business Logic Library** provides reusable building blocks for **
 
 | Project                                                | Question                                                                                |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?** — dependency analysis, conflict resolution, and execution planning |
-| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?** — fair, resource-aware scheduling                            |
-| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** — durable execution intent and recovery                |
+| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?** - dependency analysis, conflict resolution, and execution planning |
+| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?** - fair, resource-aware scheduling                            |
+| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** - durable execution intent and recovery                |
 
 Together:
 
