@@ -1,104 +1,265 @@
 # Synanton
 
-**Enterprise knowledge and business execution infrastructure.**
+**Enterprise knowledge and execution infrastructure.**
 
-Synanton explores how enterprise knowledge and business operations can be made **explicit, composable, and reliable**.
+Synanton builds open-source infrastructure for turning enterprise information into **structured knowledge, reliable decisions, and durable execution**.
 
 > **Knowledge expands the boundaries of what is possible.**
+
+------
+
+## The Synanton architecture
+
+Synanton is organized around two complementary layers:
 
 ```text
                          SYNANTON
                             │
-             ┌──────────────┴──────────────────────┐
-             │                                     │
-       Knowledge Platform              Business Logic Library
-             │                                     │
-  ┌──────────┼────────────┐      ┌─────────────────┼────────────────┐
-  │      ingestion        │      │                                  │
-  │        search         │      │  Resolutor   Equalix   Commitix  │
-  │    relationships      │      │      │          │          │     │
-  │       ontology        │      │     Plan     Schedule   Ensure   │
-  └───────────────────────┘      └──────────────────────────────────┘
-             ▲
-             │
-      ┌───────────────┐
-      │   Lucentrix   │
-      │    source     │
-      │   connectors  │
-      └───────────────┘
+             ┌──────────────┴──────────────┐
+             │                             │
+             ▼                             ▼
+      KNOWLEDGE PLATFORM          BUSINESS LOGIC LIBRARY
+             │                             │
+    ┌────────┼────────┐            ┌───────┼────────┐
+    │        │        │            │       │        │
+ Ingest    Search   Ontology    Resolve  Schedule  Commit
+    │        │        │            │       │        │
+    └────────┼────────┘            └───────┼────────┘
+             │                             │
+             ▼                             ▼
+       Enterprise                  Reliable Business
+        Knowledge                     Execution
 ```
 
-## Enterprise Knowledge Platform
+The **Knowledge Platform** turns heterogeneous enterprise content into searchable, structured and governed knowledge.
 
-[**Synanton Platform**](https://github.com/synanton/platform) is an open-source enterprise knowledge platform for applications that need to work with complex, distributed organizational knowledge.
+The **Business Logic Library** provides execution primitives for reasoning about what may happen, what can run, and how intended operations are made durable.
 
-The platform is built around explicit architectural boundaries and replaceable implementations, allowing implementation choices to evolve independently from business functionality.
+Together they provide a foundation for systems that must operate on enterprise knowledge **and act on it reliably**.
+
+------
+
+## Knowledge Platform
+
+[**Synanton Platform**](https://github.com/synanton/platform) is an open-source, AI-native enterprise knowledge platform.
+
+It brings together:
+
+- **Content ingestion** from heterogeneous sources
+- **Structured content extraction** with provenance
+- **Hybrid search** combining lexical and vector retrieval
+- **Knowledge graphs and GraphRAG**
+- **Ontology management and validation**
+- **LLM enrichment and synthesis**
+- **Multi-tenant security and access control**
+- **MCP and agent interfaces**
+- **Auditable query execution**
+- **GPU execution infrastructure**
+
+```text
+Documents / APIs / Databases / Object Stores
+                       │
+                       ▼
+              ┌─────────────────┐
+              │     Ingest      │
+              │  Extract / Parse│
+              │ Chunk / Enrich  │
+              │ Embed / Persist │
+              └────────┬────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │ Knowledge Infrastructure │
+          │                          │
+          │ Hybrid Search            │
+          │ Knowledge Graph          │
+          │ Ontology                 │
+          │ Provenance               │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+             ┌──────────────────┐
+             │ Query / Planning │
+             │ GraphRAG         │
+             │ Reranking        │
+             │ LLM Synthesis    │
+             └────────┬─────────┘
+                      │
+                      ▼
+             REST / gRPC / MCP / Agents
+```
+
+The platform is designed around explicit contracts and replaceable implementation boundaries so that storage engines, extraction technology, graph backends, model infrastructure and deployment topology can evolve independently.
+
+See the [**Synanton Platform repository**](https://github.com/synanton/platform) for architecture, implementation status, demos and roadmap.
+
+------
 
 ## Business Logic Library
 
-The **Synanton Business Logic Library** provides reusable building blocks for **dependency-aware planning, resource-aware scheduling and durable execution**.
+Synanton's execution libraries address a different problem:
 
-| Project                                                | Question                                                                                |   Status         |
-| ------------------------------------------------------ | --------------------------------------------------------------------------------------- |------------------|
-| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?** - dependency analysis, conflict resolution, and execution planning | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
-| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?** - fair, resource-aware scheduling                            | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
-| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** - durable execution intent and recovery                | ![Status](https://img.shields.io/badge/Status-Alpha-orange) |
+**How does a system turn business intent into safe, fair and durable execution?**
 
-Together:
+| Project                                                | Core question                    | What it provides                                             |
+| ------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
+| [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?**             | Dependency analysis, conflict resolution and immutable execution planning |
+| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?**       | Eventually-fair, resource-aware scheduling for high-throughput multi-tenant systems |
+| [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** | Durable execution intent, persistence and recovery           |
+
+Conceptually:
 
 ```text
-             Business Intent
-                    │
-                    ▼
-               Resolutor
-          What may happen?
-                    │
-                    ▼
-                Equalix
-        What can run, and how?
-                    │
-                    ▼
-               Commitix
-       How do we ensure it happens?
+                 Business Intent
+                       │
+                       ▼
+                  RESOLUTOR
+               What may happen?
+                       │
+                       ▼
+                   EQUALIX
+             What can run, and how?
+                       │
+                       ▼
+                  COMMITIX
+             How do we ensure it?
+                       │
+                       ▼
+                 Execution
 ```
 
-The components are independent and implementation-agnostic. They can be used individually or combined as part of a larger execution architecture.
+These components are deliberately independent.
 
-## Design Principles
+They can be adopted individually, composed together, or used as architectural primitives inside larger distributed systems.
 
-Synanton projects follow a few recurring principles:
+------
 
-* **Separate functionality from implementation**
-* **Make architectural boundaries explicit**
-* **Prefer composable components over monoliths**
-* **Keep guarantees precise**
-* **Design for failure, recovery, and change**
-* **Define business semantics before optimizing implementation**
+## Supporting infrastructure
 
-## Supporting Tools
-
-[**Lucentrix**](https://github.com/synanton/lucentrix) provides pluggable ingestion connectors for bringing external content into Synanton.
+[**Lucentrix**](https://github.com/synanton/lucentrix) provides source ingestion and connector capabilities.
 
 ```text
 External Sources
-       │
-       ▼
-   Lucentrix
-       │
-       ▼
-    Synanton
-       │
-       ▼
-Enterprise Knowledge
+      │
+      ├── Files
+      ├── Web
+      ├── APIs
+      ├── Enterprise Systems
+      └── Data Stores
+             │
+             ▼
+         Lucentrix
+             │
+             ▼
+      Synanton Platform
+             │
+             ▼
+   Structured Enterprise Knowledge
 ```
 
-Lucentrix is responsible for connecting sources; Synanton remains responsible for knowledge processing and indexing.
+Lucentrix handles the boundary between external sources and the knowledge platform, while the platform owns processing, enrichment, indexing, relationships and knowledge semantics.
 
-## Status  ![Status](https://img.shields.io/badge/Status-Experimental-purple)
+------
 
-Synanton components are currently in the initial drafting and validation phase based on the design documentation. Individual repositories document their current implementation status, architecture and roadmap.
+## A common design philosophy
+
+Synanton projects share a set of architectural principles:
+
+- **Separate functionality from implementation**
+- **Make architectural boundaries explicit**
+- **Prefer composable components over monoliths**
+- **Define guarantees precisely**
+- **Design for failure, recovery and change**
+- **Keep business semantics independent of infrastructure**
+- **Make provenance and execution state observable**
+- **Replace implementation without changing the contract**
+
+The goal is not to build one monolithic system.
+
+The goal is to create **small, composable pieces of infrastructure with strong guarantees**.
+
+------
+
+## Projects
+
+### Knowledge
+
+- [**platform**](https://github.com/synanton/platform) — AI-native enterprise knowledge platform
+- [**lucentrix**](https://github.com/synanton/lucentrix) — source ingestion and connector infrastructure
+
+### Execution
+
+- [**resolutor**](https://github.com/synanton/resolutor) — dependency-aware execution planning
+- [**equalix**](https://github.com/synanton/equalix) — fair resource scheduling
+- [**commitix**](https://github.com/synanton/commitix) — durable execution intent
+
+------
+
+## Where we're going
+
+Synanton is exploring the boundary between **knowledge infrastructure and business execution**.
+
+Enterprise systems increasingly need to do more than retrieve information or generate text. They need to:
+
+1. understand heterogeneous information,
+2. establish relationships and semantics,
+3. reason about possible actions,
+4. plan those actions,
+5. allocate resources fairly,
+6. execute them reliably,
+7. recover when systems fail, and
+8. preserve the evidence of what happened.
+
+Synanton aims to provide infrastructure for that entire path:
+
+```text
+             KNOWLEDGE
+                 │
+                 ▼
+            UNDERSTAND
+                 │
+                 ▼
+              REASON
+                 │
+                 ▼
+               PLAN
+                 │
+                 ▼
+             SCHEDULE
+                 │
+                 ▼
+              COMMIT
+                 │
+                 ▼
+             EXECUTE
+                 │
+                 ▼
+             OBSERVE
+                 │
+                 └──────────► Knowledge
+```
+
+**Knowledge should not end at retrieval.
+Reliable systems turn knowledge into action.**
+
+------
+
+## Status
+
+Synanton is actively developed. Individual repositories document their own implementation status, architecture and roadmap.
+
+The organization currently focuses on the convergence of:
+
+- enterprise knowledge infrastructure,
+- structured and multimodal content processing,
+- AI-native retrieval and reasoning,
+- distributed execution semantics,
+- resource-aware scheduling, and
+- durable business operations.
+
+------
 
 ## License
 
-Individual repositories specify their applicable license.
+Each repository specifies its applicable license.
 
