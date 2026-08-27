@@ -2,7 +2,7 @@
 
 **Enterprise knowledge and execution infrastructure.**
 
-Synanton builds open-source infrastructure for turning enterprise information into **structured knowledge, reliable decisions, and durable execution**.
+Synanton builds open-source infrastructure for turning enterprise information into **structured knowledge, reliable decisions and durable execution**.
 
 > **Knowledge expands the boundaries of what is possible.**
 
@@ -33,7 +33,7 @@ Synanton is organized around two complementary layers:
 
 The **Knowledge Platform** turns heterogeneous enterprise content into searchable, structured and governed knowledge.
 
-The **Business Logic Library** provides execution primitives for reasoning about what may happen, what can run, and how intended operations are made durable.
+The **Business Logic Library** provides execution primitives for reasoning about what may happen, what can run and how intended operations are made durable.
 
 Together they provide a foundation for systems that must operate on enterprise knowledge **and act on it reliably**.
 
@@ -60,33 +60,33 @@ It brings together:
 Documents / APIs / Databases / Object Stores
                        │
                        ▼
-              ┌─────────────────┐
-              │     Ingest      │
-              │  Extract / Parse│
-              │ Chunk / Enrich  │
-              │ Embed / Persist │
-              └────────┬────────┘
-                       │
-                       ▼
-          ┌──────────────────────────┐
-          │ Knowledge Infrastructure │
-          │                          │
-          │ Hybrid Search            │
-          │ Knowledge Graph          │
-          │ Ontology                 │
-          │ Provenance               │
-          └────────────┬─────────────┘
-                       │
-                       ▼
-             ┌──────────────────┐
-             │ Query / Planning │
-             │ GraphRAG         │
-             │ Reranking        │
-             │ LLM Synthesis    │
-             └────────┬─────────┘
-                      │
-                      ▼
-             REST / gRPC / MCP / Agents
+              ┌────────────────────┐
+              │       Ingest       │
+              │   Extract / Parse  │
+              │   Chunk / Enrich   │
+              │   Embed / Persist  │
+              └──────────┬─────────┘
+                         │
+                         ▼
+           ┌──────────────────────────┐
+           │ Knowledge Infrastructure │
+           │                          │
+           │  Hybrid Search           │
+           │  Knowledge Graph         │
+           │  Ontology                │
+           │  Provenance              │
+           └─────────────┬────────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Query / Planning │
+                │    GraphRAG      │
+                │    Reranking     │
+                │    LLM Synthesis │
+                └────────┬─────────┘
+                         │
+                         ▼
+               REST / gRPC / MCP / Agents
 ```
 
 The platform is designed around explicit contracts and replaceable implementation boundaries so that storage engines, extraction technology, graph backends, model infrastructure and deployment topology can evolve independently.
@@ -104,7 +104,7 @@ Synanton's execution libraries address a different problem:
 | Project                                                | Core question                    | What it provides                                             |
 | ------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
 | [**Resolutor**](https://github.com/synanton/resolutor) | **What may happen?**             | Dependency analysis, conflict resolution and immutable execution planning |
-| [**Equalix**](https://github.com/synanton/equalix)     | **What can run, and how?**       | Eventually-fair, resource-aware scheduling for high-throughput multi-tenant systems |
+| [**Equalix**](https://github.com/synanton/equalix)     | **What can run and how?**       | Eventually-fair, resource-aware scheduling for high-throughput multi-tenant systems |
 | [**Commitix**](https://github.com/synanton/commitix)   | **How do we ensure it happens?** | Durable execution intent, persistence and recovery           |
 
 Conceptually:
@@ -113,19 +113,19 @@ Conceptually:
                  Business Intent
                        │
                        ▼
-                  RESOLUTOR
-               What may happen?
+                   RESOLUTOR
+                What may happen?
                        │
                        ▼
-                   EQUALIX
-             What can run, and how?
+                    EQUALIX
+              What can run and how?
                        │
                        ▼
-                  COMMITIX
-             How do we ensure it?
+                   COMMITIX
+              How do we ensure it?
                        │
                        ▼
-                 Execution
+                   Execution
 ```
 
 These components are deliberately independent.
