@@ -6,6 +6,8 @@ Synanton builds open-source infrastructure for turning enterprise information in
 
 > **Knowledge expands the boundaries of what is possible.**
 
+**New here?** Start with the [**Synanton Guides**](https://synanton.github.io/platform/) — plain-language walkthroughs of how search, security and deployment work, for readers who don't want to start with source code. Engineers should go straight to the [platform repository](https://github.com/synanton/platform).
+
 ------
 
 ## The Synanton architecture
@@ -91,7 +93,21 @@ Documents / APIs / Databases / Object Stores
 
 The platform is designed around explicit contracts and replaceable implementation boundaries so that storage engines, extraction technology, graph backends, model infrastructure and deployment topology can evolve independently.
 
-See the [**Synanton Platform repository**](https://github.com/synanton/platform) for architecture, implementation status, demos and roadmap.
+See the [**Synanton Platform repository**](https://github.com/synanton/platform) for architecture, implementation status, demos and roadmap — or the [**Synanton Guides**](https://synanton.github.io/platform/) for a business/operator-level explanation of the same system with no code required.
+
+------
+
+## Documentation
+
+Synanton documentation is split by audience:
+
+| Audience | Where |
+| --- | --- |
+| Product, security, operations, partners — anyone who wants to understand *what* Synanton does and *why*, without reading code | [**Synanton Guides**](https://synanton.github.io/platform/) — Search 101, Security 101, Ingestion 101, Deployment 101, Troubleshooting 101 |
+| Engineers — architecture, module contracts, implementation status | [`docs/architecture/`](https://github.com/synanton/platform/tree/main/docs/architecture), [`docs/implementation/`](https://github.com/synanton/platform/tree/main/docs/implementation), [`docs/api/`](https://github.com/synanton/platform/tree/main/docs/api) in the platform repository |
+| Operators, on-call — runbooks, alerting, disaster recovery | [`docs/operations/`](https://github.com/synanton/platform/tree/main/docs/operations) in the platform repository |
+
+The Guides link out to the normative engineering docs for anything that needs code-level precision — they explain, they don't duplicate.
 
 ------
 
@@ -256,6 +272,13 @@ The organization currently focuses on the convergence of:
 - distributed execution semantics,
 - resource-aware scheduling, and
 - durable business operations.
+
+------
+
+## Contact
+
+- **Research & general inquiries:** research@synanton.org
+- **Security reports:** security@synanton.org
 
 ------
 
