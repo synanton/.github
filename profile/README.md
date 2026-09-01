@@ -6,7 +6,7 @@ Synanton builds open-source infrastructure for turning enterprise information in
 
 > **Knowledge expands the boundaries of what is possible.**
 
-**New here?** Start with the [**Synanton Guides**](https://synanton.github.io/platform/) — plain-language walkthroughs of how search, security and deployment work, for readers who don't want to start with source code. Engineers should go straight to the [platform repository](https://github.com/synanton/platform).
+**New here?** Start with the [**Synanton Guides**](https://synanton.github.io/guides/) — plain-language walkthroughs of how search, security and deployment work, for readers who don't want to start with source code. Engineers should go straight to the [platform repository](https://github.com/synanton/platform).
 
 ------
 
