@@ -103,7 +103,7 @@ Synanton documentation is split by audience:
 
 | Audience | Where |
 | --- | --- |
-| Product, security, operations, partners — anyone who wants to understand *what* Synanton does and *why*, without reading code | [**Synanton Guides**](https://synanton.github.io/guides/) — Search 101, Security 101, Ingestion 101, Deployment 101, Troubleshooting 101 |
+| Product, security, operations, partners — anyone who wants to understand *what* Synanton does and *why*, without reading code | [**Synanton Guides**](https://synanton.github.io/guides/) — Search, Security, Ingestion, Deployment, Troubleshooting |
 | Engineers — architecture, module contracts, implementation status | [`docs/architecture/`](https://github.com/synanton/platform/tree/main/docs/architecture), [`docs/implementation/`](https://github.com/synanton/platform/tree/main/docs/implementation), [`docs/api/`](https://github.com/synanton/platform/tree/main/docs/api) in the platform repository |
 | Operators, on-call — runbooks, alerting, disaster recovery | [`docs/operations/`](https://github.com/synanton/platform/tree/main/docs/operations) in the platform repository |
 
