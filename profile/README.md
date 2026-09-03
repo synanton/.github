@@ -349,10 +349,10 @@ The goal is to investigate and implement small, composable pieces of infrastruct
 
 | Audience | Where |
 |---|---|
-| Product, security, operations and general technical readers | [Synanton Guides](https://synanton.github.io/) |
+| Product, security, operations and general technical readers | [Synanton Guides](https://synanton.github.io/guides/) |
 | Engineers | [`docs/architecture/`](https://github.com/synanton/platform/tree/main/docs/architecture), [`docs/implementation/`](https://github.com/synanton/platform/tree/main/docs/implementation), [`docs/api/`](https://github.com/synanton/platform/tree/main/docs/api) |
 | Operators and SREs | [`docs/operations/`](https://github.com/synanton/platform/tree/main/docs/operations) |
-| Research direction and project priorities | [**Synanton Roadmap**](https://github.com/synanton/.github/blob/main/ROADMAP.md) |
+| Research direction and project priorities | [**Synanton Roadmap**](https://github.com/synanton/.github/blob/main/profile/ROADMAP.md) |
 
 The public documentation explains the system; the engineering documentation specifies it; the research roadmap explains where the project is going.
 
