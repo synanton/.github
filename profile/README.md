@@ -10,7 +10,7 @@ Synanton is both a software platform and an engineering-research project. Archit
 
 **New here?** Start with the [Synanton Guides](https://synanton.github.io/) for a plain-language introduction. Engineers can start with the [Synanton Platform](https://github.com/synanton/platform).
 
-**Project direction:** see the [Synanton Roadmap](https://github.com/synanton/.github/blob/main/ROADMAP.md).
+**Project direction:** see the [Synanton Roadmap](https://github.com/synanton/.github/blob/main/profile/ROADMAP.md).
 
 ---
 
