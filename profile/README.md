@@ -97,28 +97,6 @@ The [Roadmap](https://github.com/synanton/.github/blob/main/ROADMAP.md) tracks t
 
 ---
 
-## Architecture
-
-Synanton connects two complementary areas:
-
-```text
-                         SYNANTON
-                            │
-             ┌──────────────┴──────────────┐
-             │                             │
-             ▼                             ▼
-      KNOWLEDGE PLATFORM          BUSINESS LOGIC LIBRARY
-             │                             │
-     ┌───────┼────────┐            ┌───────┼────────┐
-     │       │        │            │       │        │
-   Ingest  Search   Graph        Plan   Schedule   Commit
-     │       │        │            │       │        │
-     └───────┼────────┘            └───────┼────────┘
-             │                             │
-             ▼                             ▼
-      Enterprise Knowledge          Reliable Execution
-```
-
 ### Knowledge lifecycle
 
 The current architecture extends the platform beyond retrieval:
