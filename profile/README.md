@@ -8,7 +8,7 @@ Synanton explores how enterprise information can become **structured, security-a
 
 Synanton is both a software platform and an engineering-research project. Architectural hypotheses are made explicit in design documents, implemented as open-source components, and intended to be evaluated through reproducible experiments and benchmarks.
 
-**New here?** Start with the [Synanton Guides](https://synanton.github.io/) for a plain-language introduction. Engineers can start with the [Synanton Platform](https://github.com/synanton/platform).
+**New here?** Start with the [Synanton Guides](https://synanton.github.io/guides/) for a plain-language introduction. Engineers can start with the [Synanton Platform](https://github.com/synanton/platform).
 
 **Project direction:** see the [Synanton Roadmap](https://github.com/synanton/.github/blob/main/profile/ROADMAP.md).
 
