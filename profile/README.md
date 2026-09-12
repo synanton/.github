@@ -2,6 +2,8 @@
 
 **Open-source systems research for enterprise knowledge and reliable business execution.**
 
+**Syn8on** is the short name for **Synanton**.
+
 Synanton explores how enterprise information can become **structured, security-aware, provenance-aware and continuously recalculable knowledge** - and how that knowledge can support **reasoning, planning and reliable execution**.
 
 > **From information to derived knowledge - and from knowledge to reliable action.**
