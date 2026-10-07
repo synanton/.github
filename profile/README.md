@@ -283,6 +283,23 @@ Examples of intended evaluation areas include:
 - durable execution recovery;
 - analytical rebuildability and query performance.
 
+### Completed evaluations
+
+The first completed instance of this model is the **Equalix family
+comparison** — a three-implementation study of the same weighted-fair
+scheduling semantics across a Spring Boot reference (`equalix`), a Go
+reimplementation (`equalix-go`), and a Micronaut port (`equalix-micronaut`).
+
+The finding is bounded: AOT compilation (Micronaut) improves cold start
+and image size over the Spring Boot oracle but does not extend to runtime
+profile — GC pauses, p99 latency, sustained ceiling and time-to-ceiling
+all overlap within measurement noise. The Go implementation has a distinct
+runtime profile (memory, startup) consistent with a native binary. Every
+dimension that could have extended the AOT advantage beyond startup was
+tested and returned null.
+
+- [**Equalix family comparison →**](experiments/equalix-family-comparison.md)
+
 Experimental results should be published separately from architectural claims so that readers can distinguish **what is designed**, **what is implemented**, and **what has been measured**.
 
 ---
