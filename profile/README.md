@@ -348,6 +348,8 @@ The goal is to investigate and implement small, composable pieces of infrastruct
 | Engineers | [`docs/architecture/`](https://github.com/synanton/platform/tree/main/docs/architecture), [`docs/implementation/`](https://github.com/synanton/platform/tree/main/docs/implementation), [`docs/api/`](https://github.com/synanton/platform/tree/main/docs/api) |
 | Operators and SREs | [`docs/operations/`](https://github.com/synanton/platform/tree/main/docs/operations) |
 | Research direction and project priorities | [**Synanton Roadmap**](https://github.com/synanton/.github/blob/main/profile/ROADMAP.md) |
+| Equalix (Spring Boot) developers | [Equalix documentation](https://synanton.github.io/equalix/) |
+| Equalix Micronaut developers | [Equalix Micronaut documentation](https://synanton.github.io/equalix-micronaut/) |
 
 The public documentation explains the system; the engineering documentation specifies it; the research roadmap explains where the project is going.
 
