@@ -302,6 +302,26 @@ tested and returned null.
 
 Experimental results should be published separately from architectural claims so that readers can distinguish **what is designed**, **what is implemented**, and **what has been measured**.
 
+### Measured: retrieval benchmark (2026-10-11, platform SNTP-9 track)
+
+First completed pass through the evaluation model above — design (benchmark
+runner + manifests) → implementation (5 vector backends + hybrid RRF) →
+controlled workloads → metrics → comparison:
+
+- **Demo corpus** (16 docs, 28 human-confirmed queries): PG/YDB 0.9821 >
+  Lucene-hybrid 0.92 > Milvus=Qdrant 0.85–0.88 > Lucene-standalone 0.80–0.83.
+- **RAG-Multi-Corpus** (236 synthetic enterprise docs, 1216 upstream gold
+  queries): Lucene-hybrid 0.9778 > Milvus=Qdrant 0.9572 > Lucene-standalone
+  0.9490 > PG=YDB 0.7944.
+- Engine ranking is **corpus-dependent** (PG/YDB lead one corpus, trail the
+  other); Milvus=Qdrant byte-identical everywhere; service integration adds
+  zero distortion; blind rank-fusion buries single-leg hits (measured trade
+  curve, tunable boost default-off).
+
+Full evidence: [platform selection framework](https://github.com/synanton/platform/blob/main/docs/architecture/vector-engine-selection.md)
+(ADR-013 Accepted), [benchmark tracker](https://github.com/synanton/platform/blob/main/docs/implementation/benchmark-tracker.md),
+[dataset registry](https://github.com/synanton/platform/blob/main/docs/benchmark/datasets.md).
+
 ---
 
 ## Research Status
