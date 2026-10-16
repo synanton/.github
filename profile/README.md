@@ -18,6 +18,13 @@ Synanton is both a software platform and an engineering-research project. Archit
 
 Enterprise AI systems have to solve several problems at the same time:
 
+At production scale, enterprise AI and retrieval systems fail in four recurring ways:
+
+- **Data & policy drift** — re-indexing entire corpora when a model, prompt, or access policy changes.
+- **Security and representation contamination** — embeddings and graph nodes leaking across tenant boundaries through derived representations.
+- **Noisy neighbors** — heavy vector-search or inference workloads saturating shared clusters and starving standard operations.
+- **Unreliable asynchronous pipelines** — network and node failures during chunking or streaming producing silent data loss and corrupted projections.
+
 - heterogeneous enterprise information;
 - semantic interpretation and enrichment;
 - knowledge that changes when sources, models, rules or policies change;
@@ -34,6 +41,45 @@ The central architectural idea is:
 > **Knowledge is derived state, and analytics is derived state over knowledge and platform activity.**
 
 This makes search indexes, vector representations, graphs and analytics projections consequences of an authoritative knowledge model rather than independent sources of truth.
+
+---
+
+## Platform Architecture
+
+The platform is organized as a set of decoupled authority planes. Each owns a
+distinct concern, exposes an explicit contract, and can evolve independently.
+
+```text
+                          SYNANTON PLATFORM 1.0
+┌───────────────────────────────────────────────────────────────────────┐
+│                         External Applications                         │
+│                              │                                        │
+│                         Platform API 1.32                             │
+└──────────────────────────────┬────────────────────────────────────────┘
+                               │
+        ┌──────────────────────┼────────────────────────┐
+        ▼                      ▼                        ▼
+   Identity 1.29         Search 1.31             AI Runtime 1.30
+        │                      │                        │
+        └───────────────┬──────┴───────────────┬────────┘
+                        ▼                      ▼
+                 Knowledge 1.25          Eventing 1.27
+                        │                      │
+                        ▼                      ▼
+                 Content Cache 1.26      Workflow / Equalix
+                        ▲                      │
+                        │                      │
+                  Ingestion 1.28 ◄────────────┘
+```
+
+The central architectural rule is: Knowledge is derived state, and search
+indexes are temporary projections. Changes to rules, access boundaries, or ML
+models recalculate only the affected graph nodes rather than reprocessing the
+entire source corpus.
+
+This decoupling is the project's core hypothesis — what enters the platform,
+how Synanton understands it, how knowledge is projected, and who is authorized
+to see it are separable concerns with explicit contracts between them.
 
 ---
 
@@ -171,6 +217,17 @@ It brings together:
 The platform is built around explicit contracts and replaceable implementation boundaries so that storage engines, extraction technology, graph backends, model infrastructure and deployment topology can evolve independently.
 
 See the [platform repository](https://github.com/synanton/platform) for implementation and engineering documentation, or the [Synanton Guides](https://synanton.github.io/) for non-code-oriented documentation.
+
+---
+
+## Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| Languages | Go, Java (Spring Boot, Micronaut), Python |
+| Search & vector fabrics | Lucene, OpenSearch, Milvus, Qdrant, ClickHouse, YDB |
+| Distributed substrates | Kafka Streams, durable workflow engines, Kubernetes Operators |
+| Infrastructure envelope | Physically isolated GPU runtime infrastructure, Terraform, Helm |
 
 ---
 
