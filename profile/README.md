@@ -69,7 +69,7 @@ distinct concern, exposes an explicit contract, and can evolve independently.
                  Content Cache 1.26      Workflow / Equalix
                         ▲                      │
                         │                      │
-                  Ingestion 1.28 ◄────────────┘
+                  Ingestion 1.28 ◄─────────────┘
 ```
 
 The central architectural rule is: Knowledge is derived state, and search
