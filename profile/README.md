@@ -16,14 +16,14 @@ Synanton is both a software platform and an engineering-research project. Archit
 
 ## The Research Problem
 
-Enterprise AI systems have to solve several problems at the same time:
-
 At production scale, enterprise AI and retrieval systems fail in four recurring ways:
 
 - **Data & policy drift** — re-indexing entire corpora when a model, prompt, or access policy changes.
 - **Security and representation contamination** — embeddings and graph nodes leaking across tenant boundaries through derived representations.
 - **Noisy neighbors** — heavy vector-search or inference workloads saturating shared clusters and starving standard operations.
 - **Unreliable asynchronous pipelines** — network and node failures during chunking or streaming producing silent data loss and corrupted projections.
+
+Enterprise AI systems have to solve several problems at the same time:
 
 - heterogeneous enterprise information;
 - semantic interpretation and enrichment;
@@ -185,8 +185,9 @@ Derived Knowledge
  Analytics → Facts → Aggregates → Metrics → Reports
 ```
 
-The normative architecture is currently documented in
-[`synanton-design-1.25`](https://github.com/synanton/platform/blob/main/docs/architecture/synanton-design-1.25.md), which consolidates annotation, derived knowledge, dependency-aware recalculation, analytics and reporting.
+The current architecture is integrated by
+[Synanton Platform Architecture 1.0](https://github.com/synanton/platform/blob/main/docs/architecture/synanton-platform-architecture-1.0.md),
+a capstone consolidating Designs 1.22–1.34. Design 1.25 remains normative for annotation, derived knowledge, recalculation and reporting within that set.
 
 The design deliberately separates:
 
@@ -293,7 +294,7 @@ Synanton treats architecture as an explicit, versioned engineering artifact.
 
 The design series records how the research direction evolves as new problems are identified and earlier assumptions are refined.
 
-The current approved architecture, [Design 1.25](https://github.com/synanton/platform/blob/main/docs/architecture/synanton-design-1.25.md), consolidates annotation, derived knowledge, dependency-aware recalculation, analytics and reporting while retaining the security and representation model established in Design 1.23.
+The current architecture is integrated by [Synanton Platform Architecture 1.0](https://github.com/synanton/platform/blob/main/docs/architecture/synanton-platform-architecture-1.0.md), a capstone consolidating Designs 1.22–1.34. Design 1.25 remains normative for annotation, derived knowledge, dependency-aware recalculation, analytics and reporting within that set, while retaining the security and representation model established in Design 1.23.
 
 See the [architecture documentation](https://github.com/synanton/platform/tree/main/docs/architecture) for the complete design history.
 
@@ -450,6 +451,8 @@ The public documentation explains the system; the engineering documentation spec
 ## Status
 
 Synanton is an actively developed experimental research project.
+
+Implementation status is tracked per plane in the platform repository; the Platform API (1.32) contract set is frozen and its first vertical slice is in progress, while Eventing/Workflow (1.27) is the next contract freeze.
 
 The current focus is the convergence of:
 
